@@ -23,7 +23,7 @@ namespace Embeddinator
         {
             var showHelp = args.Length == 0;
 
-            string vsVersions = string.Join(", ", 
+            string vsVersions = string.Join(", ",
                 Enum.GetNames(typeof(VisualStudioVersion))
                 .Select(s => s.StartsWith("VS", StringComparison.InvariantCulture) ? s.Substring(2) : s));
 
@@ -73,15 +73,15 @@ namespace Embeddinator
 
         static CompilationTarget ConvertToCompilationTarget(string target)
         {
-            switch(target.ToLowerInvariant())
+            switch (target.ToLowerInvariant())
             {
-            case "static":
-                return CompilationTarget.StaticLibrary;
-            case "shared":
-                return CompilationTarget.SharedLibrary;
-            case "app":
-            case "exe":
-                return CompilationTarget.Application;
+                case "static":
+                    return CompilationTarget.StaticLibrary;
+                case "shared":
+                    return CompilationTarget.SharedLibrary;
+                case "app":
+                case "exe":
+                    return CompilationTarget.Application;
             }
 
             throw new NotSupportedException("Unknown compilation target: " + target);
@@ -89,22 +89,22 @@ namespace Embeddinator
 
         static GeneratorKind ConvertToGeneratorKind(string gen)
         {
-            switch(gen.ToLowerInvariant())
+            switch (gen.ToLowerInvariant())
             {
-            case "c":
-                return GeneratorKind.C;
-            case "c++":
-            case "cpp":
-                return GeneratorKind.CPlusPlus;
-            case "objc":
-            case "obj-c":
-            case "objectivec":
-            case "objective-c":
-                return GeneratorKind.ObjectiveC;
-            case "java":
-                return GeneratorKind.Java;
-            case "swift":
-                return GeneratorKind.Swift;
+                case "c":
+                    return GeneratorKind.C;
+                case "c++":
+                case "cpp":
+                    return GeneratorKind.CPlusPlus;
+                case "objc":
+                case "obj-c":
+                case "objectivec":
+                case "objective-c":
+                    return GeneratorKind.ObjectiveC;
+                case "java":
+                    return GeneratorKind.Java;
+                case "swift":
+                    return GeneratorKind.Swift;
             }
 
             throw new NotSupportedException("Unknown target generator: " + gen);
@@ -126,26 +126,26 @@ namespace Embeddinator
         {
             switch (platform.ToLowerInvariant())
             {
-            case "linux":
-                return TargetPlatform.Linux;
-            case "windows":
-                return TargetPlatform.Windows;
-            case "android":
-                return TargetPlatform.Android;
-            case "osx":
-            case "macosx":
-            case "macos":
-            case "mac":
-                return TargetPlatform.MacOS;
-            case "ios":
-                return TargetPlatform.iOS;
-            case "watchos":
-                return TargetPlatform.WatchOS;
-            case "tvos":
-                return TargetPlatform.TVOS;
+                case "linux":
+                    return TargetPlatform.Linux;
+                case "windows":
+                    return TargetPlatform.Windows;
+                case "android":
+                    return TargetPlatform.Android;
+                case "osx":
+                case "macosx":
+                case "macos":
+                case "mac":
+                    return TargetPlatform.MacOS;
+                case "ios":
+                    return TargetPlatform.iOS;
+                case "watchos":
+                    return TargetPlatform.WatchOS;
+                case "tvos":
+                    return TargetPlatform.TVOS;
             }
 
-            throw new NotSupportedException ("Unknown target platform: " + platform);
+            throw new NotSupportedException("Unknown target platform: " + platform);
         }
 
         static bool SetupOptions(Options options)

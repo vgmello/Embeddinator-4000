@@ -70,6 +70,9 @@
     <Compile Include="../../external/Xamarin.Android.Tools/src/Xamarin.Android.Tools.AndroidSdk/AndroidVersions.cs">
       <Link>external/Xamarin.Android.Tools/src/Xamarin.Android.Tools.AndroidSdk/AndroidVersions.cs</Link>
     </Compile>
+    <Compile Include="../../external/Xamarin.Android.Tools/src/Xamarin.Android.Tools.AndroidSdk/JdkInfo.cs">
+      <Link>external/Xamarin.Android.Tools/src/Xamarin.Android.Tools.AndroidSdk/JdkInfo.cs</Link>
+    </Compile>
     <Compile Include="../../external/Xamarin.Android.Tools/src/Xamarin.Android.Tools.AndroidSdk/FileUtil.cs">
       <Link>external/Xamarin.Android.Tools/src/Xamarin.Android.Tools.AndroidSdk/FileUtil.cs</Link>
     </Compile>

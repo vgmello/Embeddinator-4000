@@ -14,7 +14,7 @@ namespace Embeddinator
     /// </summary>
     static class XamarinAndroid
     {
-        public const string TargetFrameworkVersion = "v8.0";
+        public const string TargetFrameworkVersion = "v9.0";
         public const string MinSdkVersion = "9";
         public const int TargetSdkVersion = 26;
         public const string JavaVersion = "1.8";
@@ -51,7 +51,7 @@ namespace Embeddinator
                 throw new Exception ($"Cannot find Android SDK installed.");
 
             //On Windows, it is generally correct, but probe for "lib"
-            if (File.Exists(Combine(binPath, "lib")))
+            if (Directory.Exists(Combine(binPath, "lib")))
                 return GetFullPath(MonoDroidSdk.BinPath);
 
             //On Mac, it is up one directory from BinPath
@@ -108,7 +108,7 @@ namespace Embeddinator
                     return i;
             }
 
-             throw new Exception ("Unable to find an installed API level!");
+            throw new Exception ("Unable to find an installed API level!");
         });
 
         /// <summary>
